@@ -1,0 +1,233 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  max-height: 10vh;
+  padding: 1em 3em;
+  align-items: center;
+}
+
+.web {
+  background: radial-gradient(rgb(3, 6, 169), rgb(2, 2, 33));
+
+}
+.social-links img {
+  padding: 1em 1.5em;
+}
+.logo,
+.hamburger {
+  z-index: 2;
+}
+.nav-open {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align:center;
+  height: 20em;
+  justify-items: center;
+  align-items: center;
+  z-index: 1;
+  background: white;
+  display: grid;
+  grid-template-columns: 5% 1fr 1fr 5%;
+  transform: translateY(-100%);
+}
+.social {
+  text-align: center;
+  justify-self: center;
+  grid-column: 3/4;
+}
+.social-links {
+  display: flex;
+  justify-content: space-evenly;
+}
+.contact h3 {
+  padding-bottom: 0.5em;
+}
+.contact {
+  grid-column: 2/3;
+}
+
+.page {
+  max-height: 90vh;
+  width:100%;
+  display: grid;
+  padding: 3em;
+  grid-template-columns: 5% 1fr 1fr 1fr 5%;
+}
+
+/*
+.photo {
+  background: radial-gradient(rgb(3, 6, 169), rgb(2, 2, 33));
+}
+.chef {
+  background: radial-gradient(rgb(18, 82, 2), rgb(2, 35, 5));
+}
+.hair {
+  background: radial-gradient(rgb(169, 3, 110), rgb(2, 2, 33));
+}*/
+.chef,
+.hair {
+  position: absolute;
+  width: 100%;
+  left: 0%;
+  bottom: 0%;
+  opacity:0;
+  pointer-events: none;
+}
+
+.mod {
+  grid-column: 3/4;
+  display: flex;
+  overflow: hidden;
+  height: 500px;
+  width: 25vw;
+  object-fit: cover;
+  justify-content: center;
+}
+@font-face {
+  font-family: poplight;
+  src: url('./fonts/Poppins-Light.ttf');
+}
+@font-face {
+  font-family: PopRegular;
+  src: url('./fonts/Poppins-Regular.ttf');
+}
+body {
+  font-family: PopRegular;
+}
+.portfolio {
+  display: flex;
+  grid-column: 2/3;
+  flex-direction: column;
+  color: white; 
+  font-family: poplight;
+  align-self: flex-end;
+  justify-content: space-evenly;
+}
+.portfolio h1{
+  font-size:4em;
+}
+.portfolio h2{
+  font-size:2.5em;
+}
+.pg h2 {
+  font-size: 2em;
+}
+.pg {
+  width: 5em;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.dot {
+  transform: scale(2);
+  opacity: 0.5;
+  cursor: pointer;
+}
+.dot:hover {
+  animation: dots 0.5s ease-in-out infinite alternate;
+}
+@keyframes dots {
+  0% {
+    transform: scale(2);
+  }
+  100% {
+    transform: scale(4);
+  }
+}
+.active {
+  opacity: 1;
+}
+.slides {
+  width: 4em;
+  height:20em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  position: absolute;
+  top: 80%;
+  right: 5%;
+  transform: translateY(-60%);
+  color: white;
+}
+.model-left {
+  transform: translateY(10%);
+}
+.mod img {
+  transition: ease-out 0.6s;
+}
+.mod:hover img {
+  transform: translateY(0%);
+}
+.mod a {
+  display: flex;
+}
+
+.model-right {
+  order: 2;
+  -ms-flex-order: 2;
+  transform: translateY(-10%);
+  transition: ease-in-out alternate 0.5s;
+}
+@media only screen and (max-width: 800px) {
+  .page {
+    display: grid;
+    grid-template-columns: 5% 1fr 5%;
+    grid-template-rows: 2fr 1fr;
+  }
+  .chef,
+  .hair {
+    position: absolute;
+    width: 100%;
+    left: 0%;
+    bottom: 0%;
+    opacity:0;
+    pointer-events: none;
+  }
+  .mod {
+    height: 40vh;
+    width: 11em;
+    grid-column: 2/3;
+    grid-row: 1/2;
+    overflow: hidden;
+    align-self: center;
+    justify-self: center;
+  }
+  .portfolio {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    font-size: 1em;
+    text-align: center;
+    font-size: 0.8em;
+    align-self: flex-start;
+  }
+  .slides {
+    width: 3em;
+    top: 40%;
+    right: 5%;
+
+    justify-content: center;
+  }
+  .slides h2 {
+    font-size: 1em;
+    padding-right: 1em;
+  }
+  .pg {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+  }
+  .slides svg {
+    width: 0.4em;
+    height: 1em;
+  }
+}
